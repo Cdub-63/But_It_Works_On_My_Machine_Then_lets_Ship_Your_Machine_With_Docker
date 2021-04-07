@@ -1,3 +1,5 @@
+![image](https://user-images.githubusercontent.com/44756128/113885099-2d37ac80-9785-11eb-8e1a-e03eaab1ab44.png)
+
 # Introduction
 If you run your website from a pre-built base image, it will require a manual process to set up the container each time it runs. For repeatability and scalability, the container, and your website code should be made into an image.
 
