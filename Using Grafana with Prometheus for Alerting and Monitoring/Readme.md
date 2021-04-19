@@ -194,19 +194,48 @@ Click the plus sign (+) on the left side of the Grafana interface, and click Imp
 
 Switch back to Grafana, and paste the text we just copied into the Or paste JSON field. Click Load. On the Import screen, click the dropdown menu for Prometheus, and select the Prometheus data source that we created earlier. Click Import.
 
+![image](https://user-images.githubusercontent.com/44756128/115284101-dc736c80-a111-11eb-9c21-3d9234ff1cbd.png)
+
+![image](https://user-images.githubusercontent.com/44756128/115284198-fe6cef00-a111-11eb-987c-38090621ae2e.png)
+
 We now have our Grafana visualization. In the upper right corner, click on Refresh every 5m and select Last 5 minutes.
 
-Add an Email Notification Channel
+![image](https://user-images.githubusercontent.com/44756128/115284280-1775a000-a112-11eb-89bb-48d3a48cff51.png)
+
+# Add an Email Notification Channel
 In the left sidebar, click the bell icon, and select Notification channels. Click Add channel. For Name, type "Email". In Email addresses, enter your email address. Click Save.
 
-Create an Alert for CPU Usage
+![image](https://user-images.githubusercontent.com/44756128/115284324-278d7f80-a112-11eb-9720-eda4639df449.png)
+
+![image](https://user-images.githubusercontent.com/44756128/115284385-3d9b4000-a112-11eb-9b52-e68585f03521.png)
+
+![image](https://user-images.githubusercontent.com/44756128/115284470-5572c400-a112-11eb-95e6-dc9d9f19da6e.png)
+
+# Create an Alert for CPU Usage
 Click the dashboard icon in the left sidebar, and select Home. Select the Docker and system monitoring dashboard. Click the CPU Usage graph, and select Edit from the dropdown.
+
+![image](https://user-images.githubusercontent.com/44756128/115284591-7c30fa80-a112-11eb-8462-5e8884a792f8.png)
+
+![image](https://user-images.githubusercontent.com/44756128/115284648-8eab3400-a112-11eb-9fce-852acb12f740.png)
+
+![image](https://user-images.githubusercontent.com/44756128/115284710-a2569a80-a112-11eb-82b4-1138b3cc9230.png)
 
 In the Metrics tab, click Add Query. Enter the following:
 
 sum(rate(process_cpu_seconds_total[1m])) * 100
+
 Click the eye icon on the right side of Row E to hide the new rule from view.
 
+![image](https://user-images.githubusercontent.com/44756128/115285038-06795e80-a113-11eb-8c8c-47baa2008bce.png)
+
 Click the Alert tab, then Create Alert. Under Conditions, click into the query field and select E** from the dropdown. For IS ABOVE, type "75". Click **Test Rule.
+
+![image](https://user-images.githubusercontent.com/44756128/115285086-14c77a80-a113-11eb-8cc2-a49ac03d1433.png)
+
+![image](https://user-images.githubusercontent.com/44756128/115285389-6c65e600-a113-11eb-83ce-c29968222e38.png)
+
+![image](https://user-images.githubusercontent.com/44756128/115285450-7ee01f80-a113-11eb-998e-fe333fca3773.png)
+
+![image](https://user-images.githubusercontent.com/44756128/115285533-94ede000-a113-11eb-969a-314001011d5e.png)
 
 Click Notifications in the left sidebar, then click the + icon next to Sent to. Select Email Alerts. Next, click into the Message text box, and type "CPU usage is over 75%." Click the save button at the top of the page. In the save popup that opens, check the box next to Save current variables. In the description box, type "Add alerting". Then click Save.
