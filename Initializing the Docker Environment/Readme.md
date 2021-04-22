@@ -45,7 +45,7 @@ sudo yum -y install docker-ce
 ![image](https://user-images.githubusercontent.com/44756128/113726642-052f4700-96ba-11eb-8d86-c5054dd3436f.png)
 
 # Enable the Docker Daemon
-Enable the Docker daemon:
+Enable and start the Docker daemon:
 ```sh
 sudo systemctl enable --now docker
 ```
