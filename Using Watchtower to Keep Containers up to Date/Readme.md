@@ -117,3 +117,5 @@ Now if we run docker container ls periodically, we'll eventually see that the de
 
 # Conclusion
 Our days of manually updating containers are over! Watchtower will see any changes we make to images, then go ahead and implement them automatically.
+
+![image](https://user-images.githubusercontent.com/44756128/116007845-5060b980-a5d7-11eb-82b2-a1108f448ed1.png)
