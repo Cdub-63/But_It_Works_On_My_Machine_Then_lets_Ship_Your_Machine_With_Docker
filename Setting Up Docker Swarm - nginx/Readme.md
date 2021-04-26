@@ -14,6 +14,8 @@ docker swarm init \
 
 After this runs, we'll get a docker swarm join command that we can then go run from the worker. Copy it.
 
+![image](https://user-images.githubusercontent.com/44756128/116150084-86ba3980-a6a8-11eb-9773-f9159adc015b.png)
+
 # Add the Worker to the Cluster
 Now we can paste the docker swarm join command in a terminal on the worker:
 ```sh
@@ -21,7 +23,11 @@ docker swarm join --token [TOKEN] \
 [MANAGER_PRIVATE_IP]:2377
 ```
 
+![image](https://user-images.githubusercontent.com/44756128/116150209-b6694180-a6a8-11eb-9c1c-ff99ac4e67bb.png)
+
 On the manager, we can run docker node ls and see both of them, if all went well.
+
+![image](https://user-images.githubusercontent.com/44756128/116150286-caad3e80-a6a8-11eb-8f66-68cc3b38c205.png)
 
 # Create a Swarm Service
 Let's create an Nginx service in the swarm. Run this command on the master node:
@@ -32,6 +38,8 @@ docker service create -d \
 --replicas 2 \
 nginx:latest
 ```
+
+![image](https://user-images.githubusercontent.com/44756128/116150555-1eb82300-a6a9-11eb-897e-df64c74e111e.png)
 
 Now we can run (still on the master node) docker service ls and see nginx_service running, and that it's running on both nodes.
 
