@@ -11,10 +11,14 @@ We'll start off by getting a join token. On the master node, run this:
 docker swarm join-token worker
 ```
 
+![image](https://user-images.githubusercontent.com/44756128/116152928-2b8a4600-a6ac-11eb-92b2-631e6cf3169d.png)
+
 Copy the join token, and then run it on the worker node:
 ```sh
 docker swarm join --token [TOKEN] [MANAGER_PRIVATE_IP]:2377
 ```
+
+![image](https://user-images.githubusercontent.com/44756128/116153058-5eccd500-a6ac-11eb-8525-b56442a81777.png)
 
 We should get a message about this node joining a swarm as a worker. We're good to go, and we can shut the worker terminal down.
 
@@ -54,3 +58,5 @@ mysql:5.7
 
 # Conclusion
 If we list our services with a docker service ls, we'll see that everything is up and running, with the right number of replicas.
+
+![image](https://user-images.githubusercontent.com/44756128/116153309-ba975e00-a6ac-11eb-9142-0fb406814dd5.png)
