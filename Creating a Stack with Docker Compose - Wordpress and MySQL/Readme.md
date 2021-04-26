@@ -9,15 +9,21 @@ We'll start off by getting a join token. On the master node, run this:
 [cloud_user@manager]$ docker swarm join-token worker
 ```
 
+![image](https://user-images.githubusercontent.com/44756128/116151430-33e18180-a6aa-11eb-93e2-205c7f290fb8.png)
+
 Copy the join token, and then run it on the worker node:
 ```sh
 [cloud_user@worker]$ docker swarm join --token [TOKEN] [MANAGER_PRIVATE_IP]:2377
 ```
 
+![image](https://user-images.githubusercontent.com/44756128/116151473-40fe7080-a6aa-11eb-8fc7-04c835d35dd5.png)
+
 Now, to see if things are running, execute this on the manager:
 ```sh
 [cloud_user@manager]$ docker node ls
 ```
+
+![image](https://user-images.githubusercontent.com/44756128/116151504-4a87d880-a6aa-11eb-84b4-ad0b6be099e1.png)
 
 We should see two nodes, each with a STATUS of Ready and an Availability of Active.
 
@@ -61,6 +67,8 @@ networks:
   wordpress_public:
 ```
 
+![image](https://user-images.githubusercontent.com/44756128/116151630-760ac300-a6aa-11eb-9591-5f19b9683956.png)
+
 # Create the Wordpress Blog
 Deploy the stack with:
 ```sh
@@ -77,12 +85,18 @@ We should see out wp stack. To look further, use this command:
 docker service ls
 ```
 
+![image](https://user-images.githubusercontent.com/44756128/116151741-9d619000-a6aa-11eb-8e82-c1fccad37f2a.png)
+
 This will show us the running services, and we can see that each has 1/1 replicas. This means everything is working right.
+
+![image](https://user-images.githubusercontent.com/44756128/116151898-d7329680-a6aa-11eb-8155-d56a85a82654.png)
 
 # Complete the Wordpress Setup
 NOTE: Please be patient while the service comes up for its first run, this can take some time due to the size of the wordpress application, once loaded, also allow some time for first login to complete successfully, delays are normal.
 
 Now that we know everything is running, we can browse (in a web browser) to the public IP of our master node and land on the Wordpress setup page. Use whatever language you're comfortable with, fill out the form, and let Wordpress do the rest. We'll land at the Wordpress login page once the install finishes.
+
+![image](https://user-images.githubusercontent.com/44756128/116152215-3abcc400-a6ab-11eb-9d91-400cc1fe108a.png)
 
 # Conclusion
 We're done. We've got a brand-spanking new blog just waiting for cooking content, and it's sitting on the the Docker stack, just like we wanted. Congratulations!
